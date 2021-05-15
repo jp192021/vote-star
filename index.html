@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* a vote system for 5 stars from atozringtones.com */ 
+.rintstar{
+  display: flex;
+  line-height: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.vote{
+  display: flex;
+  line-height: 30px;
+}
+.starclass{
+  width: 25px;
+  height: 25px;
+}
+.votestar{
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  cursor: pointer;
+  background: url("../vote/static/img/star.png");
+  background-size:30px;
+}
+.point-span{
+  font-size: 18px;
+  font-weight: bold;
+}
+.ringtitle{
+  font-size: 25px;
+}
+.voteform{
+  display: none;
+}
+
+.vote1:hover~.vote2{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote1:hover~.vote3{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote1:hover~.vote4{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote1:hover~.vote5{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+
+.vote2:hover~.vote3{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote2:hover~.vote4{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote2:hover~.vote5{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+
+.vote3:hover~.vote4{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote3:hover~.vote5{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+.vote4:hover~.vote5{
+  background: transparent url("../vote/static/img/graystar.png");
+  background-size: 30px;
+}
+</style>
+</head>
+<body>
+<div>
+ <span class="vote">
+
+                                    <span class='votestar vote1' title="1 star" onmouseover="voteStar(1)" onclick="sendStar(1)"></span>
+                                    <span class='votestar vote2' title="2 stars" onmouseover="voteStar(2)" onclick="sendStar(2)"></span>
+                                    <span class='votestar vote3' title="3 stars" onmouseover="voteStar(3)" onclick="sendStar(3)"></span>
+                                    <span class='votestar vote4' title="4 stars" onmouseover="voteStar(4)" onclick="sendStar(4)"></span>
+                                    <span class='votestar vote5' title="5 stars" onmouseover="voteStar(5)" onclick="sendStar(5)"></span>
+                                    <form method="post" action="" class="voteform">
+                                        <input type="text" name="stars" id="stars">
+                                        <input type="text" name="rid" value="">
+                                        <button id="button" type="submit">send</button>
+                                    </form>
+                                </span>
+</div>
+
+</body>
+</html>
+
+
+<script>
+    let stars = document.getElementById('stars')
+    let button = document.getElementById('button')
+    function sendStar(num) {
+        stars.value = num
+	alert('you vote for ('+num+')stars')
+        button.click() 
+
+    }
+//code from atozringtones.com
+
+</script>
